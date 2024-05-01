@@ -92,7 +92,7 @@ unless FrameworkFixture.framework
     
         it "should generate correct filenames" do
           @files.each_with_index do |file, i|
-            File.exists?("#{@dest}/#{@versions[i]}_#{file}").should == true
+            File.exist?("#{@dest}/#{@versions[i]}_#{file}").should == true
           end
           Dir["#{@dest}/*.{js,css}"].length.should == @files.length
         end
@@ -140,7 +140,7 @@ unless FrameworkFixture.framework
 
         it "should generate correct filenames" do
           @files.each_with_index do |file, i|
-            File.exists?("#{@dest}/#{@versions[i]}_#{file}").should == true
+            File.exist?("#{@dest}/#{@versions[i]}_#{file}").should == true
           end
           Dir["#{@dest}/*.{js,css}"].length.should == @files.length
         end
@@ -285,7 +285,7 @@ unless FrameworkFixture.framework
             end
             
             it "should create package with default modified time" do
-              File.exists?(@package).should == true
+              File.exist?(@package).should == true
             end
             
             it "should create package with untracked file" do

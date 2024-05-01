@@ -53,14 +53,14 @@ class SmartAsset
           package = "#{dest}/#{hash}_#{package}.#{ext}"
           
           # If package file exists
-          if File.exists?(package)
+          if File.exist?(package)
             packages << package
           else
             data = []
             
             # Join files in package
             files.each do |file|
-              if File.exists?(source = "#{dir}/#{file}.#{ext}")
+              if File.exist?(source = "#{dir}/#{file}.#{ext}")
                 data << File.read(source)
               end
             end
@@ -203,7 +203,7 @@ class SmartAsset
           if package.to_s == match
             files.collect do |file|
               file = "/#{@sources[type]}/#{file}.#{ext}"
-              file if File.exists?("#{@pub}/#{file}")
+              file if File.exist?("#{@pub}/#{file}")
             end
           end
         end
